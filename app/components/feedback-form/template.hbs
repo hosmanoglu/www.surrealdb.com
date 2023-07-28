@@ -1,0 +1,58 @@
+<div class='feedback'>
+	<button
+		type='button'
+		id='feedback'
+		class='feedback-button'
+		{{on 'click' this.toggleFeedbackForm}}
+		...attributes
+	>
+		<div>
+			{{#if (has-block)}}
+				{{yield}}
+			{{else if @text}}
+				{{@text}}
+			{{else}}
+				<i class='fal fa-comment'></i>
+				<span>Send Feedback</span>
+			{{/if}}
+		</div>
+	</button>
+
+	{{#if this.show}}
+		<EmberTether
+			@target='#feedback'
+			@targetAttachment='bottom middle'
+			@attachment='top right'
+			@offset='0 -20px'
+		>
+			<div class='feedback-form'>
+				<form>
+					<div class="category-select">
+						<select>
+							<option value="" disabled selected>Feeback category</option>
+							<option value="feedback">Feedback</option>
+							<option value="bug">Bug</option>
+							<option value="idea">Idea</option>
+						</select>
+					</div>
+					{{!-- <Input
+						@value={{this.email}}
+						name='email'
+						id='email-input'
+						placeholder='Enter your email address'
+					/> --}}
+					<Textarea
+						@value={{this.lastname}}
+						rows='5'
+						name='feedback'
+						id='feedback-input'
+						placeholder='What are your thoughts'
+					/>
+					<button type='submit'>
+						Submit
+					</button>
+				</form>
+			</div>
+		</EmberTether>
+	{{/if}}
+</div>

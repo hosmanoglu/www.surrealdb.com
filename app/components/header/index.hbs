@@ -3,38 +3,41 @@
 	<content route={{route-name}}>
 
 		<div>
-			<LinkTo @route="index" class="logo"></LinkTo>
+			<LinkTo @route='index' class='logo' />
 		</div>
 
 		<space></space>
 
 		<Header::Links>
 
-			<Header::Links::Item @link="index" @text="Home" />
+			<Header::Links::Item @link='index' @text='Home' />
 
-			<Header::Links::Item @link="community" @text="Community" />
+			<Header::Links::Item @link='community' @text='Community' />
 
-			<Header::Links::Item @link="products" @text="Products" />
+			<Header::Links::Item @link='products' @text='Products' />
 
-			<Header::Links::Item @link="careers" @text="Careers" />
+			<Header::Links::Item @link='careers' @text='Careers' />
 
-			<Header::Links::Item @link="features" @text="Features" />
+			<Header::Links::Item @link='features' @text='Features' />
 
-			<Header::Links::Item @link="releases" @text="Releases" />
+			<Header::Links::Item @link='releases' @text='Releases' />
 
-			<Header::Links::Item @link="install" @text="Install" />
+			<Header::Links::Item @link='install' @text='Install' />
 
-			<Header::Links::Item @link="docs" @text="Docs" />
+			<Header::Links::Item @link='docs' @text='Docs' />
 
-			<Header::Links::Item @link="blog" @text="Blog" />
+			<Header::Links::Item @link='blog' @text='Blog' />
 
-			<Button::Thicker @link={{url "github"}}>
-				<i class="fa fa-star"></i> <span>Star us on GitHub</span>
+			<Button::Thicker @link={{url 'github'}}>
+				<i class='fa fa-star'></i>
+				<span>Star us on GitHub</span>
 			</Button::Thicker>
+
+			<FeedbackForm />
 
 		</Header::Links>
 
-		<Sidebar::Menu @type="over" />
+		<Sidebar::Menu @type='over' />
 
 	</content>
 
