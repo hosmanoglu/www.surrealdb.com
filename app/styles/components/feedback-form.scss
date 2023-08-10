@@ -1,4 +1,6 @@
 .feedback {
+    margin: 0 0 0 30px;
+
     @include media(max-width-1301) {
         display: block;
     }
@@ -12,22 +14,10 @@
     background: var(--boxes-color);
 }
 
-@keyframes growOut {
-     0% {
-        transform: scale(0)
-    }
-    80% {
-        transform: scale(1.1)
-    }
-    100% {
-        transform: scale(1)
-    }
-}
-
 .feedback-form {
     background-color: #101116;
     padding: 20px;
-    margin-top: 25px;
+    margin-top: 30px;
     width: 340px;
     border-radius: 12px;
     display:flex;
@@ -36,6 +26,38 @@
     flex-direction:column;
     animation: growOut 300ms ease-in-out forwards;
     transform-origin: top center;
+
+    .feedback-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 263px;
+
+        .feedback-step {
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+
+            .icon-success {
+                color: #ff009e;
+                padding-bottom: 10px;
+                font-size: x-large;
+            }
+
+            .icon-failure {
+                color: #c41221;
+                padding-bottom: 10px;
+                font-size: x-large;
+            }
+
+            button {
+                width: auto;
+                height: 30px;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+        }
+    }
 
     .category-select {
         width:100%;
@@ -53,41 +75,10 @@
              -moz-appearance: none;
              appearance: none;
              border: none;
-             background: var(--input-color) url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='20' height='20' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>") no-repeat;
              background-position: right 10px top 50%;
+             background: var(--input-color) url("/static/img/icons/down-caret.svg") no-repeat 95% center;
+
         }
-
-        select:after {
-            content:"\f13a";
-            font-family: "FontAwesome";
-            color: #fff;
-            padding: 12px 8px;
-            position: absolute; right: 0; top: 0;
-            z-index: 1;
-            text-align: center;
-            width: 10%;
-            height: 100%;      
-            pointer-events: none;
-            box-sizing: border-box;   
-        }
-    }
-
-    input {
-
-        width:100%;
-        height:45px;
-        border:none;
-        padding:0 30px;
-        font-size:16px;
-        margin:0 0 20px 0;
-        border-radius:16px;
-        color:var(--text-color);
-        background-color:var(--input-color);
-
-        @include placeholder {
-            color:var(--faint-color);
-        }
-
     }
 
     textarea {
@@ -107,52 +98,26 @@
     }
 
     button {
-
         width:100%;
         height:45px;
         flex-shrink:0;
         font-size:16px;
 
-    }
-}
-
-.feedback {
-    margin: 0 0 0 30px;
-}
-
-form {
-
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-
-    input {
-
-        width:100%;
-        height:45px;
-        border:none;
-        padding:0 30px;
-        font-size:16px;
-        margin:0 0 20px 0;
-        border-radius:16px;
-        color:var(--text-color);
-        background-color:var(--input-color);
-
-        @include placeholder {
-            color:var(--faint-color);
+        &:disabled {
+            background: #323335;
+            transform: none;
         }
-
     }
+}
 
-    button {
-
-        width:100%;
-        height:45px;
-        flex-shrink:0;
-        font-size:16px;
-
+@keyframes growOut {
+     0% {
+        transform: scale(0)
     }
-
+    80% {
+        transform: scale(1.1)
+    }
+    100% {
+        transform: scale(1)
+    }
 }

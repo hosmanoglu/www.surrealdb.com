@@ -4,10 +4,16 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class FeedbackFormComponent extends Component {
+	@service surreal;
+	@service router;
+
 	@tracked show;
 	@tracked selectedCategory = 'feedback';
-	@tracked feedback;
-	@service surreal;
+	@tracked text;
+	@tracked isSavingFeedback = false;
+	@tracked hasSavedFeedback = false;
+	@tracked isNewFeedBack = true;
+	@tracked hasError = false;
 
 	categories = [
 		{
@@ -27,6 +33,15 @@ export default class FeedbackFormComponent extends Component {
 	@action
 	toggleFeedbackForm() {
 		this.show = !this.show;
+		this.resetForm();
+	}
+
+	@action
+	resetForm() {
+		this.isSavingFeedback = false;
+		this.isNewFeedBack = true;
+		this.hasSavedFeedback = false;
+		this.text = '';
 	}
 
 	@action
@@ -36,17 +51,25 @@ export default class FeedbackFormComponent extends Component {
 
 	@action
 	async submitFeedback() {
-		if (!this.feedback) return;
+		if (!this.text) return;
+
+		this.isSavingFeedback = true;
 
 		try {
-			await this.surreal.create('feedback', {
-				category: this.selectedCategory,
-				feedback: this.feedback,
-			});
+			// await this.surreal.create('feedback', {
+			// 	type: this.selectedCategory,
+			// 	text: this.text,
+			// 	currentURL: this.router.currentURL,
+			// 	dateTime: new Date(),
+			// });
 
-			this.show = false;
+			this.hasSavedFeedback = true;
 		} catch {
-			// handle error
+			this.hasError = true;
+		} finally {
+			this.isSavingFeedback = false;
+			this.isNewFeedBack = false;
+			this.text = '';
 		}
 	}
 }

@@ -21,32 +21,67 @@
 	{{#if this.show}}
 		<EmberTether
 			@target='#feedback'
-			@targetAttachment='bottom middle'
+			@targetAttachment='bottom right'
 			@attachment='top right'
-			@offset='0 -20px'
 		>
 			<div class='feedback-form'>
-				<form>
-					<div class='category-select'>
-						<select {{on 'change' this.setCategory}}>
-							{{#each this.categories as |category|}}
-								<option value={{category.value}}>
-									{{category.label}}
-								</option>
-							{{/each}}
-						</select>
+				{{#if this.isNewFeedBack}}
+					<form>
+						<div class='category-select'>
+							<select {{on 'change' this.setCategory}}>
+								{{#each this.categories as |category|}}
+									<option value={{category.value}}>
+										{{category.label}}
+									</option>
+								{{/each}}
+							</select>
+						</div>
+						<Textarea
+							@value={{this.text}}
+							rows='5'
+							name='feedback'
+							id='feedback-input'
+							placeholder='What are your thoughts'
+						/>
+						<button
+							type='button'
+							disabled={{this.isSavingFeedback}}
+							{{on 'click' this.submitFeedback}}
+						>
+							Submit
+						</button>
+					</form>
+				{{else if this.hasSavedFeedback}}
+					<div class='feedback-container'>
+						<div class='feedback-step'>
+							<div class='icon-success'>
+								<i class='fa-regular fa-circle-check'></i>
+							</div>
+							<div>
+								<p>Thanks! We received your feedback.</p>
+							</div>
+							<button
+								type='button'
+								{{on 'click' this.toggleFeedbackForm}}
+							>Close</button>
+						</div>
 					</div>
-					<Textarea
-						@value={{this.feedback}}
-						rows='5'
-						name='feedback'
-						id='feedback-input'
-						placeholder='What are your thoughts'
-					/>
-					<button type='button' {{on 'click' this.submitFeedback}}>
-						Submit
-					</button>
-				</form>
+				{{else if this.hasError}}
+					<div class='feedback-container'>
+						<div class='feedback-step'>
+							<div class='icon-success'>
+								<i class='fa-solid fa-circle-exclamation'></i>
+							</div>
+							<div>
+								<p>Something Went Wrong. Please try again later.</p>
+							</div>
+							<button
+								type='button'
+								{{on 'click' this.toggleFeedbackForm}}
+							>Close</button>
+						</div>
+					</div>
+				{{/if}}
 			</div>
 		</EmberTether>
 	{{/if}}
