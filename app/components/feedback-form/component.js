@@ -40,7 +40,8 @@ export default class FeedbackFormComponent extends Component {
 	resetForm() {
 		this.isSavingFeedback = false;
 		this.isNewFeedBack = true;
-		this.hasSavedFeedback = false;
+		this.hasSavedFeedback = true;
+		this.hasError = false;
 		this.text = '';
 	}
 
@@ -56,12 +57,12 @@ export default class FeedbackFormComponent extends Component {
 		this.isSavingFeedback = true;
 
 		try {
-			// await this.surreal.create('feedback', {
-			// 	type: this.selectedCategory,
-			// 	text: this.text,
-			// 	currentURL: this.router.currentURL,
-			// 	dateTime: new Date(),
-			// });
+			await this.surreal.create('feedback', {
+				type: this.selectedCategory,
+				text: this.text,
+				currentURL: this.router.currentURL,
+				dateTime: new Date(),
+			});
 
 			this.hasSavedFeedback = true;
 		} catch {
