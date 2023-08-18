@@ -4,6 +4,10 @@
     @include media(max-width-1301) {
         display: block;
     }
+
+    @include media(max-width-750) {
+        display:none;
+    }
 }
 
 .feedback-button {

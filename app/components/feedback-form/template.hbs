@@ -28,6 +28,7 @@
 				{{#if this.isNewFeedBack}}
 					<form>
 						<div class='category-select'>
+							{{! template-lint-disable require-input-label }}
 							<select {{on 'change' this.setCategory}}>
 								{{#each this.categories as |category|}}
 									<option value={{category.value}}>
