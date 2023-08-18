@@ -57,11 +57,18 @@ export default class FeedbackFormComponent extends Component {
 		this.isSavingFeedback = true;
 
 		try {
-			await this.surreal.create('feedback', {
-				type: this.selectedCategory,
-				text: this.text,
-				currentURL: this.router.currentURL,
-				dateTime: new Date(),
+			await fetch('https://form.surrealdb.com/feedback', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json',
+				},
+				body: JSON.stringify({
+					type: this.selectedCategory,
+					text: this.text,
+					url: this.router.currentURL,
+					date: new Date(),
+				}),
 			});
 
 			this.hasSavedFeedback = true;
@@ -70,6 +77,7 @@ export default class FeedbackFormComponent extends Component {
 		} finally {
 			this.isSavingFeedback = false;
 			this.isNewFeedBack = false;
+			this.selectedCategory = 'feedback';
 			this.text = '';
 		}
 	}
