@@ -2,18 +2,18 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
+import { drop } from '@ascua/tasks';
 
 export default class FeedbackFormComponent extends Component {
 	@service surreal;
 	@service router;
 
-	@tracked show;
 	@tracked selectedCategory = 'feedback';
-	@tracked text;
-	@tracked isSavingFeedback = false;
-	@tracked hasSavedFeedback = false;
 	@tracked isNewFeedBack = true;
+	@tracked hasSavedFeedback = false;
 	@tracked hasError = false;
+	@tracked text;
+	@tracked show;
 
 	categories = [
 		{
@@ -38,10 +38,10 @@ export default class FeedbackFormComponent extends Component {
 
 	@action
 	resetForm() {
-		this.isSavingFeedback = false;
 		this.isNewFeedBack = true;
 		this.hasSavedFeedback = true;
 		this.hasError = false;
+		this.selectedCategory = 'feedback';
 		this.text = '';
 	}
 
@@ -50,14 +50,11 @@ export default class FeedbackFormComponent extends Component {
 		this.selectedCategory = e.target.value;
 	}
 
-	@action
-	async submitFeedback() {
+	@drop *submitFeedback() {
 		if (!this.text) return;
 
-		this.isSavingFeedback = true;
-
 		try {
-			await fetch('https://form.surrealdb.com/feedback', {
+			yield fetch('https://form.surrealdb.com/feedback', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -72,13 +69,9 @@ export default class FeedbackFormComponent extends Component {
 			});
 
 			this.hasSavedFeedback = true;
+			this.isNewFeedBack = false;
 		} catch {
 			this.hasError = true;
-		} finally {
-			this.isSavingFeedback = false;
-			this.isNewFeedBack = false;
-			this.selectedCategory = 'feedback';
-			this.text = '';
 		}
 	}
 }

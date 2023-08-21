@@ -46,8 +46,8 @@
 						/>
 						<button
 							type='button'
-							disabled={{this.isSavingFeedback}}
-							{{on 'click' this.submitFeedback}}
+							disabled={{this.submitFeedback.isRunning}}
+							{{on 'click' this.submitFeedback.run}}
 						>
 							Submit
 						</button>
@@ -64,7 +64,8 @@
 							<button
 								type='button'
 								{{on 'click' this.toggleFeedbackForm}}
-							>Close</button>
+							>Close
+							</button>
 						</div>
 					</div>
 				{{else if this.hasError}}
@@ -79,7 +80,8 @@
 							<button
 								type='button'
 								{{on 'click' this.toggleFeedbackForm}}
-							>Close</button>
+							>Close
+							</button>
 						</div>
 					</div>
 				{{/if}}
