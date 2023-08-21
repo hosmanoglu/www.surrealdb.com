@@ -1,29 +1,21 @@
 <div class='feedback'>
 	<button
 		type='button'
-		id='feedback'
 		class='feedback-button'
 		{{on 'click' this.toggleFeedbackForm}}
 		...attributes
 	>
 		<div>
-			{{#if (has-block)}}
-				{{yield}}
-			{{else if @text}}
-				{{@text}}
-			{{else}}
-				<i class='fal fa-comment'></i>
-				<span>Send Feedback</span>
-			{{/if}}
+			<i class='fal fa-comment'></i>
+			<span>Send Feedback</span>
 		</div>
 	</button>
 
 	{{#if this.show}}
-		<EmberTether
-			@target='#feedback'
-			@targetAttachment='bottom right'
-			@attachment='top right'
-		>
+		<Ascua::Modal @onClose={{fn (mut this.show) false}}>
+
+			<Modal::Close @close={{fn (mut this.show) false}} />
+
 			<div class='feedback-form'>
 				{{#if this.isNewFeedBack}}
 					<form>
@@ -52,40 +44,32 @@
 							Submit
 						</button>
 					</form>
-				{{else if this.hasSavedFeedback}}
+				{{else}}
 					<div class='feedback-container'>
 						<div class='feedback-step'>
-							<div class='icon-success'>
-								<i class='fa-regular fa-circle-check'></i>
-							</div>
-							<div>
-								<p>Thanks! We received your feedback.</p>
-							</div>
-							<button
-								type='button'
-								{{on 'click' this.toggleFeedbackForm}}
-							>Close
-							</button>
-						</div>
-					</div>
-				{{else if this.hasError}}
-					<div class='feedback-container'>
-						<div class='feedback-step'>
-							<div class='icon-success'>
-								<i class='fa-solid fa-circle-exclamation'></i>
-							</div>
-							<div>
-								<p>Something Went Wrong. Please try again later.</p>
-							</div>
-							<button
-								type='button'
-								{{on 'click' this.toggleFeedbackForm}}
-							>Close
-							</button>
+							{{#if this.hasSavedFeedback}}
+								<div class='icon-success'>
+									<i class='fa-regular fa-circle-check'></i>
+								</div>
+								<div>
+									<p>Thanks! We received your feedback.</p>
+								</div>
+							{{else}}
+								<div class='icon-success'>
+									<i
+										class='fa-solid fa-circle-exclamation'
+									></i>
+								</div>
+								<div>
+									<p>Something Went Wrong. Please try again
+										later.
+									</p>
+								</div>
+							{{/if}}
 						</div>
 					</div>
 				{{/if}}
 			</div>
-		</EmberTether>
+		</Ascua::Modal>
 	{{/if}}
 </div>
