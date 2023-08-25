@@ -13,7 +13,7 @@ export default class FeedbackFormComponent extends Component {
 	@tracked hasSavedFeedback = false;
 	@tracked hasError = false;
 	@tracked text;
-	@tracked show;
+	@tracked show = false;
 
 	categories = [
 		{
