@@ -1,9 +1,9 @@
-{{on (document) "click" this.click}}
+{{on (document) 'click' this.click}}
 
 <sidebar>
 
 	<div>
-		<i class="fas fa-times"></i>
+		<i class='fas fa-times'></i>
 	</div>
 
 	<div>
@@ -12,31 +12,50 @@
 
 			<div>
 
-				<Header::Links::Item @link="index" @text="Home" />
-				<Header::Links::Item @link="community" @text="Community" />
-				<Header::Links::Item @link="careers" @text="Careers" />
-				<Header::Links::Item @link="team" @text="Meet the team" />
-				<Header::Links::Item @link="blog" @text="Blog" />
+				<Header::Links::Item @link='index' @text='Home' />
+				<Header::Links::Item @link='community' @text='Community' />
+				<Header::Links::Item @link='careers' @text='Careers' />
+				<Header::Links::Item @link='team' @text='Meet the team' />
+				<Header::Links::Item @link='blog' @text='Blog' />
 
 				<p>Product</p>
-				<Header::Links::Item @link="install" @text="Install" />
-				<Header::Links::Item @link="products" @text="Products" />
-				<Header::Links::Item @link="features" @text="Features" />
-				<Header::Links::Item @link="releases" @text="Releases" />
-				<Header::Links::Item @link="docs" @text="Documentation" />
+				<Header::Links::Item @link='install' @text='Install' />
+				<Header::Links::Item @link='products' @text='Products' />
+				<Header::Links::Item @link='features' @text='Features' />
+				<Header::Links::Item @link='releases' @text='Releases' />
+				<Header::Links::Item @link='docs' @text='Documentation' />
 
 				<p>Community</p>
-				<Header::Links::Item @link={{url "github"}} @text="GitHub" />
-				<Header::Links::Item @link={{url "discord"}} @text="Discord" />
-				<Header::Links::Item @link={{url "x"}} @text="X" />
-				<Header::Links::Item @link={{url "youtube"}} @text="YouTube" />
-				<Header::Links::Item @link={{url "linkedin"}} @text="LinkedIn" />
-				<Header::Links::Item @link={{url "reddit"}} @text="Reddit" />
-				<Header::Links::Item @link={{url "instagram"}} @text="Instagram" />
-				<Header::Links::Item @link={{url "stackoverflow"}} @text="Stack Overflow" />
-				<Header::Links::Item @link={{url "threads"}} @text="Threads" />
-				<Header::Links::Item @link={{url "medium"}} @text="Medium" />
-				<Header::Links::Item @link={{url "dev"}} @text="Dev" />
+				<Header::Links::Item @link={{url 'github'}} @text='GitHub' />
+				<Header::Links::Item @link={{url 'discord'}} @text='Discord' />
+				<Header::Links::Item @link={{url 'x'}} @text='X' />
+				<Header::Links::Item @link={{url 'youtube'}} @text='YouTube' />
+				<Header::Links::Item
+					@link={{url 'linkedin'}}
+					@text='LinkedIn'
+				/>
+				<Header::Links::Item @link={{url 'reddit'}} @text='Reddit' />
+				<Header::Links::Item
+					@link={{url 'instagram'}}
+					@text='Instagram'
+				/>
+				<Header::Links::Item
+					@link={{url 'stackoverflow'}}
+					@text='Stack Overflow'
+				/>
+				<Header::Links::Item @link={{url 'threads'}} @text='Threads' />
+				<Header::Links::Item @link={{url 'medium'}} @text='Medium' />
+				<Header::Links::Item @link={{url 'dev'}} @text='Dev' />
+			</div>
+
+			<div>
+
+				<Button @link={{url 'github'}}>
+					<span>Star us on GitHub</span>
+				</Button>
+
+				<FeedbackForm />
+
 			</div>
 
 		</nav>
