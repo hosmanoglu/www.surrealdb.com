@@ -3,6 +3,8 @@
 		type='button'
 		class='feedback-button'
 		{{on 'click' this.toggleFeedbackForm}}
+		bordered
+		thicker
 		...attributes
 	>
 		<div>
@@ -19,8 +21,8 @@
 			<div class='feedback-form'>
 				{{#if this.isNewFeedBack}}
 					<form>
-						Give feedback
-						<line></line>
+						<h1 class='title'>Give feedback</h1>
+
 						<div class='category-select'>
 							{{! template-lint-disable require-input-label }}
 							<select {{on 'change' this.setCategory}}>
