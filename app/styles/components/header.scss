@@ -20,6 +20,11 @@ header {
 			padding-top:14px;
 		}
 
+		@include media(min-width-1301) {
+			width: auto;
+			max-width: 1370px;
+		}
+
 		> div {
 
 			height:30px;
