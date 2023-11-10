@@ -23,7 +23,8 @@ layout-hero {
 		flex-direction:column;
 		justify-content:center;
 		background-image:url("/static/img/illustrations/hero.png"), linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
-		
+		background-color:#000000;
+
 		@include media(max-width-1301) {
 			background-image:url("/static/img/illustrations/hero1.png"), linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
 		}
@@ -60,6 +61,7 @@ layout-hero {
 		height:auto;
 		padding:120px 0 150px 0;
 		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			height:auto;
@@ -72,6 +74,7 @@ layout-hero {
 		height:auto;
 		padding:120px 0 150px 0;
 		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
@@ -81,15 +84,30 @@ layout-hero {
 		
 	}
 
-	&[install], &[releases], &[license], &[security], &[docs], &[features], &[opensource], &[media], &[giveaway] {
+	&[install], &[releases], &[license], &[security], &[features], &[opensource], &[media], &[giveaway] {
 		height:auto;
 		padding:120px 0 150px 0;
 		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 
 		@include media(max-width-960) {
 			top:0px;
 			height:auto;
 			padding:120px 0 50px 0;
+		}
+
+	}
+
+	&[docs], &[blog-article] {
+		padding:0;
+		height:auto;
+		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
+
+		@include media(max-width-960) {
+			top:0px;
+			padding:0;
+			height:auto;
 		}
 
 	}
@@ -170,7 +188,11 @@ layout-hero {
 	&[gettingstarted] {
 		height:auto;
 		padding:250px 80px 250px 80px;
-		background-image:url("/static/img/illustrations/gettingstarted.png");
+		background-image:url("/static/img/illustrations/gettingstarted.jpg");
+
+		@media (prefers-color-scheme: light) {
+			background-image:url("/static/img/illustrations/light/gettingstarted.jpg");
+		}
 
 		@include media(max-width-960) {
 			padding:250px 40px 250px 40px;
@@ -249,6 +271,7 @@ layout-hero {
 			line-height:1;
 			font-size:90px;
 			margin:0 0 10px 0;
+			color:var(--same-color);
 			font-family:'SF Pro Display';
 
 			img {
@@ -285,6 +308,7 @@ layout-hero {
 
 			width:80%;
 			font-size:28px;
+			color:var(--same-color);
 
 			@include media(max-width-1250) {
 				width:100%;
@@ -304,7 +328,7 @@ layout-hero {
 
 			width:80%;
 			font-size:24px;
-			color:var(--text-color);
+			color:var(--same-color);
 
 			@include media(max-width-1250) {
 				width:100%;
@@ -319,7 +343,7 @@ layout-hero {
 			line-height:1.2;
 			font-family:"SF Pro Display";
 			transition:color 0.3s;
-			color:var(--text-color);
+			color:var(--same-color);
 			text-rendering:optimizeLegibility;
 			-webkit-font-smoothing:antialiased;
 		
@@ -356,6 +380,12 @@ layout-hero {
 			font-size:18px;
 			margin-bottom:30px;
 			color:var(--faint-color);
+
+		}
+
+		a {
+
+			color:var(--same-color);
 
 		}
 

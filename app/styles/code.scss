@@ -113,7 +113,7 @@ codes {
 
 		pre[class*="language-"] {
 
-			border-top:1px solid var(--split-color);
+			border-top:1px solid var(--border-color);
 
 		}
 
@@ -183,11 +183,46 @@ code.language-surql {
 	.token.connector { color:#e100ff; }
 	.token.record { color:#0084ff; }
 	.token.range { color:#0084ff; }
+
+	@media (prefers-color-scheme: light) {
+		.token.operator { background:none; }
+		.token.comment { color:#737e98; }
+		.token.punctuation { color:#000000; }
+		.token.variable { color:#ffc845; }
+		.token.operator { color:#ff009e; }
+		.token.keyword { color:#ff009e; }
+		.token.cast { color:#999999; }
+		.token.string { color:#68DE74; }
+		.token.number { color:#00dbff; }
+		.token.duration { color:#00dbff; }
+		.token.boolean { color:#9d2fff; }
+		.token.nothing { color:#9d2fff; }
+		.token.constant { color:#ff9b67; }
+		.token.function { color:#ff9b67; }
+		.token.connector { color:#e100ff; }
+		.token.record { color:#0084ff; }
+		.token.range { color:#0084ff; }
+	}
 }
 
-code.language-shell {
+code.language-shell, code.language-bash {
 	.token.prompt { color:#636a75; }
 	.token.command { color:#ff009e; }
+	.token.parameter.variable { color:#ffffff; }
+
+	@media (prefers-color-scheme: light) {
+		.token.prompt { color:#636a75; }
+		.token.command { color:#ff009e; }
+		.token.parameter.variable { color:#000000; }
+	}
+}
+
+code.language-rust {
+	.token.punctuation { color:#ffffff; }
+
+	@media (prefers-color-scheme: light) {
+		.token.punctuation { color:#000000; }
+	}
 }
 
 code.language-javascript {
@@ -195,8 +230,19 @@ code.language-javascript {
 	.token.function { color:#ff9b67; }
 	.token.constant { color:#ff009e; }
 	.token.keyword { color:#ff009e; }
+
+	@media (prefers-color-scheme: light) {
+		.token.string { color:#68DE74; }
+		.token.function { color:#ff9b67; }
+		.token.constant { color:#ff009e; }
+		.token.keyword { color:#ff009e; }
+	}
 }
 
 code.language-txt {
 	color:#aeb8ca;
+
+	@media (prefers-color-scheme: light) {
+		color:#aeb8ca;
+	}
 }

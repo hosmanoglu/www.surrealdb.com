@@ -1,6 +1,6 @@
 footer {
 
-	background-color:#0B0B0C;
+	background-color:var(--footer-color);
 
 	content {
 
@@ -71,7 +71,7 @@ footer {
 			padding:100px 0 0 0;
 			align-items:flex-start;
 			justify-content:space-between;
-			border-bottom:1px solid var(--border-color);
+			// border-bottom:1px solid var(--border-color);
 
 			@include media(max-width-1449) {
 				width:100%;
@@ -160,7 +160,7 @@ footer {
 			flex-direction:row;
 			padding:0 0 100px 0;
 			justify-content:flex-start;
-			border-top:1px solid var(--border-color);
+			// border-top:1px solid var(--border-color);
 
 			@include media(max-width-1449) {
 				max-width:100%;

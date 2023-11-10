@@ -4,40 +4,44 @@
 	--back-color:#000000;		// Background page colour
 	--light-color:#151517;		// Colour of dark text in boxes
 	--dark-color:#151517;		// Colour of dark text in boxes
-	--faint-color:#8A8F98;		// Colour of faint text
+	--faint-color:#6e6e73;		// Colour of faint text
 	--hover-color:#ff009e;		// Colour of links when hovering
 	--popup-color:#151517;		// Colour of popup modal window
 	--coder-color:#151517;		// Colour of code box elements
 	--boxes-color:#151517;		// Colour of content box elements
 	--input-color:#151517;		// Colour input form elements
 	--split-color:#151517;		// Colour of border lines in split code boxes
-	--darker-color:#1D1D1F;	// Colour of content boxes inside content boxes
+	--darker-color:#0b0b0c;	// Colour of content boxes inside content boxes
 	--border-color:#1e2327;	// Colour of border separation lines
 	--sidebar-color:#151517;	// Colour of mobile sidebar menu
-	--footer-color:#0B0B0C;	// Colour of footer
+	--footer-color:#000000;	// Colour of footer
 	--same-color:#ffffff;		// Same colourfrom light to dark mode
 	--black-color:#000000;		// Same colourfrom light to dark mode
-	--lighter-color:#afb5c0;	// Same colourfrom light to dark modef
+	--lighter-color:#6e6e73;	// Same colourfrom light to dark mode
+	--flip-color:#ffffff;		// Flip colour from light to dark mode
+
 
 	@media (prefers-color-scheme: light) {
-		--text-color:#ffffff;		// Colour of primary text
-		--back-color:#000000;		// Background page colour
-		--light-color:#151517;		// Colour of dark text in boxes
-		--dark-color:#151517;		// Colour of dark text in boxes
-		--faint-color:#8A8F98;		// Colour of faint text
+		--text-color:#000000;		// Colour of primary text
+		--back-color:#ffffff;		// Background page colour
+		--light-color:#f5f5f7;		// Colour of dark text in boxes
+		--dark-color:#f5f5f7;		// Colour of dark text in boxes
+		--faint-color:#6e6e73;		// Colour of faint text
 		--hover-color:#ff009e;		// Colour of links when hovering
 		--popup-color:#151517;		// Colour of popup modal window
 		--coder-color:#151517;		// Colour of code box elements
-		--boxes-color:#151517;		// Colour of content box elements
+		--boxes-color:#f5f5f7;		// Colour of content box elements
 		--input-color:#151517;		// Colour input form elements
-		--split-color:#151517;		// Colour of border lines in split code boxes
-		--darker-color:#1D1D1F;	// Colour of content boxes inside content boxes
-		--border-color:#1e2327;	// Colour of border separation lines
+		--split-color:#6e6e73;		// Colour of border lines in split code boxes
+		--darker-color:#ffffff;	// Colour of content boxes inside content boxes
+		--border-color:#d9d9d9;	// Colour of border separation lines
 		--sidebar-color:#151517;	// Colour of mobile sidebar menu
-		--footer-color:#0B0B0C;	// Colour of footer
-		--same-color:#ffffff;		// Same colourfrom light to dark mode
-		--black-color:#000000;		// Same colourfrom light to dark mode
-		--lighter-color:#afb5c0;	// Same colourfrom light to dark modef
+		--footer-color:#f5f5f7;	// Colour of footer
+		--same-color:#ffffff;		// Same colour from light to dark mode
+		--black-color:#000000;		// Same colour from light to dark mode
+		--lighter-color:#6e6e73;	// Same colour from light to dark mode
+		--flip-color:#000000;		// Flip colour from light to dark mode
+
 	}
 
 	@media (prefers-color-scheme: dark) {
@@ -45,20 +49,21 @@
 		--back-color:#000000;		// Background page colour
 		--light-color:#151517;		// Colour of dark text in boxes
 		--dark-color:#151517;		// Colour of dark text in boxes
-		--faint-color:#8A8F98;		// Colour of faint text
+		--faint-color:#6e6e73;		// Colour of faint text
 		--hover-color:#ff009e;		// Colour of links when hovering
 		--popup-color:#151517;		// Colour of popup modal window
 		--coder-color:#151517;		// Colour of code box elements
 		--boxes-color:#151517;		// Colour of content box elements
 		--input-color:#151517;		// Colour input form elements
 		--split-color:#151517;		// Colour of border lines in split code boxes
-		--darker-color:#1D1D1F;	// Colour of content boxes inside content boxes
+		--darker-color:#0b0b0c;	// Colour of content boxes inside content boxes
 		--border-color:#1e2327;	// Colour of border separation lines
 		--sidebar-color:#151517;	// Colour of mobile sidebar menu
-		--footer-color:#0B0B0C;	// Colour of footer
-		--same-color:#ffffff;		// Same colourfrom light to dark mode
-		--black-color:#000000;		// Same colourfrom light to dark mode
-		--lighter-color:#afb5c0;	// Same colourfrom light to dark modef
+		--footer-color:#000000;	// Colour of footer
+		--same-color:#ffffff;		// Same colour from light to dark mode
+		--black-color:#000000;		// Same colour from light to dark mode
+		--lighter-color:#6e6e73;	// Same colour from light to dark mode
+		--flip-color:#ffffff;		// Flip colour from light to dark mode
 	}
 
 }

@@ -1,7 +1,13 @@
 <layout-box-item tick={{@tick}} ...attributes>
 
 	{{#if @image}}
-		<pic><img src={{@image}} alt={{@title}}></pic>
+		<picture>
+			<source
+				srcset={{@imagedark}}
+				media="(prefers-color-scheme: dark)"
+			/>
+			<img src={{@image}} alt={{@title}}>
+		</picture>
 	{{/if}}
 
 	{{#if (or @stamp @title @label @text (has-block))}}
@@ -19,15 +25,18 @@
 
 			{{#if @label}}
 				<h4>
-					{{#if @tick}}
-						<img src="/static/img/home/tick.svg" width={{18}} height={{18}} alt>
-					{{/if}}
 					{{@label}}
 				</h4>
 			{{/if}}
 
 			{{#if @text}}
 				<p>{{@text}}</p>
+			{{/if}}
+
+			{{#if @buttontext}}
+				<Button::Thinner @link={{@url}}>
+					<span>{{@buttontext}}</span> <i class="fas fa-arrow-right"></i>
+				</Button::Thinner>
 			{{/if}}
 
 			{{yield}}

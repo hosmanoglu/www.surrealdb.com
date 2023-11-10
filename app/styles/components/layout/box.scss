@@ -1,15 +1,11 @@
 layout-box {
 
 	display: block;
-	max-width: 100%;
-	margin: auto;
-	
+
 	content {
 
-		width:100%;
 		display: grid;
-		grid-gap: 0px 0px;
-
+		grid-gap: 10px 10px;
 		grid-template-columns: repeat(12, 1fr);
 
 		>a {
@@ -44,16 +40,36 @@ layout-box {
 			overflow: hidden;
 			text-align: left;
 			position: relative;
-			border-radius: 0px;
 			grid-column: auto / span 2;
-			background-color:var(--back-color);
+			background-color: var(--dark-color);
+
+			picture {
+
+				display: block;
+				max-width: 100%;
+				overflow: hidden;
+				position: relative;
+
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					max-width: 100%;
+					object-fit: cover;
+					transition: transform 0.3s;
+				}
+
+			}
 
 			&[clear] {
+
 				background-color: transparent;
-				border-radius: 0px;
 				
 				div {
-					padding: 60px;
+					padding-left: 15%;
+					padding-right:15%;
+					padding-bottom: 5%;
+					padding-top: 5%;
 
 					>h3 {
 						color: var(--text-color);
@@ -78,90 +94,124 @@ layout-box {
 
 			&[dark] {
 				background-color:var(--dark-color);
-
 				div {
+
 					padding:90px;
-				}
-
-				pic {
-
-					padding:0px;
-					display: block;
-					max-width: 100%;
-					overflow: hidden;
-					position: relative;
-	
-					img {
-						width: 100px;
-						margin: auto;
-						height: 125px;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
-					}
-	
 				}
 
 			}
 
-			&[black] {
-				background-color:var(--dark-color);
-
+			&[opensource] {
+				background-color:#0b0b0c;
 				div {
-					padding:90px;
-				}
 
-				pic {
-
-					padding:0px;
-					display: block;
-					max-width: 100%;
-					overflow: hidden;
-					position: relative;
-	
-					img {
-						width: 100px;
-						margin: auto;
-						height: 125px;
-						display: block;
-						max-width: 100%;
-						object-fit: cover;
-						transition: transform 0.3s;
-					}
-	
+					padding:60px;
 				}
 
 			}
 		
 			&[white] {
-				background-color:var(--text-color);
+				background-color:var(--same-color);
+
+				div {
+					padding-left: 15%;
+					padding-right:15%;
+					padding-bottom: 5%;
+					padding-top: 5%;
+
+					>h3 {
+						font-size: 38px;
+						font-weight: 600;
+						line-height: 1.1;
+						color: var(--text-color);
+					}
+	
+					>h4 {
+						color: var(--text-color);
+					}
+
+					>p:last-child {
+						font-size: 17px;
+						font-weight: 600;
+						padding-bottom: 60px;
+
+					}
+	
+					>p:first-child {
+						font-size: 17px;
+						padding-bottom: 60px;
+						margin-bottom: 5px;
+						display: inline-block;
+						color: var(--text-color);
+					}
+				}
 			}
 
 			&[light] {
-				background-color:#f5f5f7;
-			}
-		
-			&[pink] {
-				background: rgb(255,0,160);
-				background: linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				background: -moz-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				background: -webkit-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00a0",endColorstr="#9600ff",GradientType=1);
+				background-color:var(--light-color);
+
+				div {
+					padding-left:15%;
+					padding-right:15%;
+					padding-bottom:10%;
+					padding-top:10%;
+
+					@include media(max-width-960) {
+						padding-left:10%;
+						padding-right:10%;
+						padding-bottom:15%;
+						padding-top:5%;
+					}
+
+					>h3 {
+						font-size: 32px;
+						font-weight: 600;
+						line-height: 1.2;
+						color: var(--text-color);
+
+						@include media(max-width-768) {
+							width:100%;
+							font-size: 24px;
+						}
+
+					}
+	
+					>h4 {
+						color: var(--text-color);
+					}
+
+					>p:last-child {
+						font-size: 17px;
+						font-weight: 600;
+						padding-bottom: 60px;
+
+					}
+	
+					>p:first-child {
+						font-size: 17px;
+						padding-bottom: 60px;
+						margin-bottom: 5px;
+						display: inline-block;
+						color: var(--text-color);
+					}
+				}
+
 			}
 
-			&[photo1] {
+			&[casestudies1] {
 
 				height:auto;
+				border-radius: 0px;
 				background-size:cover;
   				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/nhs.jpg");
+				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/jules.jpg");
 
-				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/nhs.jpg");
-				}
 				div {
 					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
 
 					>h3 {
 						color: var(--same-color);
@@ -179,6 +229,103 @@ layout-box {
 					>p:first-child {
 						width:95%;
 						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+			}
+
+			&[casestudies2] {
+
+				height:auto;
+				border-radius: 0px;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/nhs.jpg");
+
+				div {
+					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+			}
+		
+			&[pink] {
+				background: rgb(255,0,160);
+				background: -moz-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				background: -webkit-linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				background: linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(150,0,255,1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00a0",endColorstr="#9600ff",GradientType=1);
+			}
+
+			&[photo1] {
+
+				height:auto;
+				border-radius: 0px;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/casestudies/nhs.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/nhs.jpg");
+				}
+
+				div {
+					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
 					}
 				}
 			}
@@ -186,15 +333,21 @@ layout-box {
 			&[photo2] {
 
 				height:auto;
+				border-radius: 0px;
 				background-size:cover;
   				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/education.jpeg");
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/casestudies/libertymutual.jpg");
 
 				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/education.jpeg");
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/libertymutual.jpg");
 				}
+
 				div {
 					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
 
 					>h3 {
 						color: var(--same-color);
@@ -212,6 +365,11 @@ layout-box {
 					>p:first-child {
 						width:95%;
 						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
 					}
 				}
 			}
@@ -219,15 +377,21 @@ layout-box {
 			&[photo3] {
 
 				height:auto;
+				border-radius: 0px;
 				background-size:cover;
   				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/tesla.jpg");
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/casestudies/tesla.jpg");
 
 				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/tesla.jpg");
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/tesla.jpg");
 				}
+
 				div {
 					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
 
 					>h3 {
 						color: var(--same-color);
@@ -245,6 +409,11 @@ layout-box {
 					>p:first-child {
 						width:95%;
 						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
 					}
 				}
 			}
@@ -252,15 +421,21 @@ layout-box {
 			&[photo4] {
 
 				height:auto;
+				border-radius: 0px;
 				background-size:cover;
   				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.png");
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/surrealdbworld.png");
 
 				@media (prefers-color-scheme: light) {
 					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.png");
 				}
+
 				div {
 					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
 
 					>h3 {
 						color: var(--same-color);
@@ -279,7 +454,352 @@ layout-box {
 						width:95%;
 						color: var(--same-color);
 					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
 				}
+			}
+
+			&[careers1] {
+
+				height:auto;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/hero.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/hero.jpg");
+				}
+
+				div {
+					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+			}
+
+			&[careers2] {
+
+				height:auto;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/whatissurrealdb.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/whatissurrealdb.jpg");
+				}
+
+				div {
+					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+			}
+
+			&[careers3] {
+
+				height:auto;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/makinganimpact.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/makinganimpact.jpg");
+				}
+
+				div {
+					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+			}
+
+			&[careers4] {
+
+				height:auto;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/careers7.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/careers7.jpg");
+				}
+
+				div {
+					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
+
+					>h3 {
+						width:75%;
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+			}
+
+			&[surrealdbworld] {
+
+				height:auto;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/surrealdbworld.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.jpg");
+				}
+
+				div {
+					padding: 60px;
+
+					>h3 {
+						width:50%;
+						font-size: 62px;
+						font-weight: 600;
+						line-height: 1.1;
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+			}
+
+			&[team] {
+
+				height:auto;
+				background-size:cover;
+  				background-position: center;
+
+				div {
+					padding: 30px;
+
+					>h3 {
+						font-size: 22px;
+						margin-bottom:0px;
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--lighter-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--lighter-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+			}
+
+			&[team1] {
+
+				height:auto;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/team/hero.jpg");
+				
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/team/hero.jpg");
+				}
+
+				div {
+					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+
+			}
+
+			&[community] {
+
+				height:auto;
+				background-size:cover;
+  				background-position: center;
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/community/community.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/community/community.jpg");
+				}
+
+				div {
+					padding: 60px;
+
+					@include media(max-width-960) {
+						padding: 40px;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					p {
+						width:95%;
+						color:var(--same-color);
+					}
+				}
+				
 			}
 
 			&[ml] {
@@ -287,10 +807,10 @@ layout-box {
 				height:auto;
 				background-size:cover;
   				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/SurrealIcon_ML.png");
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 
 				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/SurrealIcon_ML.png");
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 				}
 				div {
 					padding: 60px;
@@ -320,10 +840,10 @@ layout-box {
 				height:auto;
 				background-size:cover;
   				background-position: center;
-				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/SurrealIcon_ML.png");
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 
 				@media (prefers-color-scheme: light) {
-					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/SurrealIcon_ML.png");
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/SurrealIcon_ML.png");
 				}
 				div {
 					padding: 60px;
@@ -351,27 +871,77 @@ layout-box {
 			&[wider] {
 
 				border-radius: 0px;
+				margin-bottom: 100px;
+				background-color:var(--back-color);
+
+				@include media(max-width-960) {
+					margin-bottom: 50px;
+				}
 
 				div {
-					padding:0px;
+					padding: 0px;
+
+					@include media(max-width-1200) {
+						width:100%;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
 
 					>p:last-child {
 						width:95%;
+						color: var(--same-color);
+
+						@include media(max-width-768) {
+							width:100%;
+						}
 					}
 	
 					>p:first-child {
 						width:95%;
+						color: var(--same-color);
+
+						@include media(max-width-768) {
+							width:100%;
+						}
 					}
+
+					@media (prefers-color-scheme: light) {
+						>h3 {
+							color: var(--text-color);
+						}
+		
+						>h4 {
+							color: var(--text-color);
+						}
+	
+						>p:last-child {
+							width:95%;
+							color: var(--faint-color);
+						}
+		
+						>p:first-child {
+							width:95%;
+							color: var(--faint-color);
+						}
+					}
+
 				}
 
-				pic {
+				picture {
 
 					display: block;
-					max-width: 100%;
+					width: 80px;
 					overflow: hidden;
 					position: relative;
+					padding-bottom: 20px;
 					border-radius: 0px;
-					background-color:var(--dark-color);
+					background-color:none
 	
 					img {
 						width: 100%;
@@ -386,28 +956,189 @@ layout-box {
 				}
 			}
 
-			pic {
+			&[transparent] {
 
-				display: block;
-				max-width: 100%;
-				overflow: hidden;
-				position: relative;
+				border-radius: 0px;
+				margin-bottom: 100px;
+				background-color:transparent;
 
-				img {
-					width: 100%;
-					margin: auto;
-					height: 100%;
-					display: block;
+				@include media(max-width-960) {
+					margin-bottom: 50px;
+				}
+
+				div {
+					padding: 0px;
 					max-width: 100%;
-					object-fit: cover;
-					transition: transform 0.3s;
+
+					@include media(max-width-1200) {
+						width:930px;
+					}
+				
+					@include media(max-width-1024) {
+						width:85%;
+					}
+
+					@include media(max-width-768) {
+						width:100%;
+					}
+
+					>h3 {
+						color: var(--text-color);
+					}
+	
+					>h4 {
+						color: var(--text-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--text-color);
+
+						@include media(max-width-768) {
+							width:100%;
+						}
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--text-color);
+
+						@include media(max-width-768) {
+							width:100%;
+						}
+					}
+
+				}
+
+				picture {
+
+					display: block;
+					width: 110px;
+					overflow: hidden;
+					position: relative;
+					padding-bottom: 20px;
+					border-radius: 0px;
+					background-color:none
+	
+					img {
+						width: 100%;
+						margin: auto;
+						height: 100%;
+						display: block;
+						max-width: 100%;
+						object-fit: cover;
+						transition: transform 0.3s;
+					}
+	
+				}
+			}
+
+			&[products] {
+
+				border-radius: 0px;
+				margin-bottom: 100px;
+				background-color:var(--dark-color);
+				
+				div {
+					padding: 0px;
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
+					@media (prefers-color-scheme: light) {
+						>h3 {
+							color: var(--text-color);
+						}
+		
+						>h4 {
+							color: var(--text-color);
+						}
+	
+						>p:last-child {
+							width:95%;
+							color: var(--faint-color);
+						}
+		
+						>p:first-child {
+							width:95%;
+							color: var(--faint-color);
+						}
+					}
+
+				}
+
+				picture {
+
+					display: block;
+					width: 110px;
+					overflow: hidden;
+					position: relative;
+					padding-bottom: 20px;
+					border-radius: 0px;
+					background-color:none;
+	
+					img {
+						width: 100%;
+						margin: auto;
+						height: 100%;
+						display: block;
+						max-width: 100%;
+						object-fit: cover;
+						transition: transform 0.3s;
+					}
+	
+				}
+			}
+
+			&[hero] {
+
+				border-radius: 0px;
+				margin-bottom: 100px;
+				background-color: transparent;
+
+				div {
+					padding: 0px;
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+					}
+
 				}
 
 			}
 
 			div {
 
-				padding: 60px;
+				padding: 40px;
 
 				@include media(max-width-1024) {
 					padding: 30px;
@@ -416,7 +1147,7 @@ layout-box {
 				>h3 {
 					font-size: 26px;
 					font-weight: 600;
-					line-height: 1.5;
+					line-height: 1.2;
 				}
 
 				>h4 {
@@ -426,9 +1157,7 @@ layout-box {
 				}
 
 				>p:last-child {
-					font-size: 17px;
-					font-weight: 600;
-					color: var(--same-color);
+					font-size: 16px;
 				}
 
 				>p:first-child {
@@ -436,7 +1165,7 @@ layout-box {
 					padding-bottom: 0;
 					margin-bottom: 5px;
 					display: inline-block;
-					color: var(--same-color);
+					color: var(--faint-color);
 				}
 
 			}
@@ -504,7 +1233,7 @@ layout-box {
 
 			&[full][side] {
 
-				pic {
+				picture {
 
 					img {
 						top: 0;
@@ -524,7 +1253,7 @@ layout-box {
 
 			&[full][side] {
 
-				pic {
+				picture {
 
 					float: left;
 					width: 67.7%;
@@ -593,7 +1322,7 @@ layout-box {
 
 			&[full][side] {
 
-				pic {
+				picture {
 
 					img {
 						top: 0;
@@ -613,7 +1342,7 @@ layout-box {
 
 			&[full][side] {
 
-				pic {
+				picture {
 
 					float: left;
 					width: 67.7%;

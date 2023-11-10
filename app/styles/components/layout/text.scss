@@ -37,18 +37,25 @@ layout-text {
 	&[index] {
 
 		h1 {
+
 			width:100%;
 			line-height:1;
 			font-size:6.5vw;
 			margin:0 0 10px 0;
 			font-family:'SF Pro Display';
+			
 			@include media(max-width-960) {
 				font-size:52px;
+			}
+
+			@include media(min-width-1449) {
+				font-size: 100px;
 			}
 		
 		}
 
 		h2 {
+
 			font-size:2.5vw;
 			
 			@include media(max-width-960) {

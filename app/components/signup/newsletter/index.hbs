@@ -18,13 +18,13 @@
 		<Modal::Close @close={{fn (mut this.show) false}} />
 
 		{{#if this.done}}
-			Thank you for registering for the <img inline src="/static/img/text.svg" alt="SurrealDB" /> newsletter! Check your email inbox for communications from us, and make sure to whitelist <code>surrealdb.com</code> in your email inbox.
+			Thank you for registering for the SurrealDB newsletter! Check your email inbox for communications from us, and make sure to whitelist <code>surrealdb.com</code> in your email inbox.
 			<br><br>
 			Tobie
 			<br>
 			Founder, SurrealDB
 		{{else}}
-			Enter your email below to join the <img inline src="/static/img/text.svg" alt="SurrealDB" /> newsletter and stay updated on new product releases, features, and updates to our documentation. We promise we won't spam you!
+			Enter your email below to join the SurrealDB newsletter and stay updated on new product releases, features, and updates to our documentation. We promise we won't spam you!
 			<line></line>
 			<form {{on "submit" this.submit.run}}>
 				<Input @value={{this.firstname}} name="firstname" label="First name" placeholder="Enter your first name" />

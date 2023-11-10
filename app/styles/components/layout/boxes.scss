@@ -43,7 +43,7 @@ layout-boxes {
 			grid-column: auto / span 2;
 			background-color: var(--dark-color);
 
-			pic {
+			picture {
 
 				display: block;
 				max-width: 100%;
@@ -102,9 +102,13 @@ layout-boxes {
 			}
 
 			&[opensource] {
-				background-color:#0b0b0c;
-				div {
+				background-color:var(--darker-color);
 
+				// @media (prefers-color-scheme: light) {
+				// 	background-color:var(--light-color);
+				// }
+
+				div {
 					padding:60px;
 				}
 
@@ -294,6 +298,10 @@ layout-boxes {
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url("/static/img/casestudies/nhs.jpg");
 
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/nhs.jpg");
+				}
+
 				div {
 					padding: 60px;
 
@@ -333,6 +341,10 @@ layout-boxes {
 				background-size:cover;
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/casestudies/libertymutual.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/libertymutual.jpg");
+				}
 
 				div {
 					padding: 60px;
@@ -374,6 +386,10 @@ layout-boxes {
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/casestudies/tesla.jpg");
 
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/casestudies/tesla.jpg");
+				}
+
 				div {
 					padding: 60px;
 
@@ -414,6 +430,10 @@ layout-boxes {
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/surrealdbworld.png");
 
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.png");
+				}
+
 				div {
 					padding: 60px;
 
@@ -451,7 +471,11 @@ layout-boxes {
 				height:auto;
 				background-size:cover;
   				background-position: center;
-				  background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/hero.jpg");
+				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/hero.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/hero.jpg");
+				}
 
 				div {
 					padding: 60px;
@@ -492,6 +516,10 @@ layout-boxes {
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/whatissurrealdb.jpg");
 
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/whatissurrealdb.jpg");
+				}
+
 				div {
 					padding: 60px;
 
@@ -530,6 +558,10 @@ layout-boxes {
 				background-size:cover;
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/makinganimpact.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/makinganimpact.jpg");
+				}
 
 				div {
 					padding: 60px;
@@ -570,6 +602,10 @@ layout-boxes {
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/careers/careers7.jpg");
 
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/careers/careers7.jpg");
+				}
+
 				div {
 					padding: 60px;
 
@@ -609,6 +645,10 @@ layout-boxes {
 				background-size:cover;
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/surrealdbworld.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/surrealdbworld.jpg");
+				}
 
 				div {
 					padding: 60px;
@@ -684,6 +724,10 @@ layout-boxes {
 				background-size:cover;
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/team/hero.jpg");
+				
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/team/hero.jpg");
+				}
 
 				div {
 					padding: 60px;
@@ -724,6 +768,10 @@ layout-boxes {
 				background-size:cover;
   				background-position: center;
 				background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url("/static/img/community/community.jpg");
+
+				@media (prefers-color-scheme: light) {
+					background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("/static/img/community/community.jpg");
+				}
 
 				div {
 					padding: 60px;
@@ -889,7 +937,7 @@ layout-boxes {
 
 				}
 
-				pic {
+				picture {
 
 					display: block;
 					width: 80px;
@@ -950,6 +998,10 @@ layout-boxes {
 						width:95%;
 						color: var(--text-color);
 
+						@media (prefers-color-scheme: light) {
+							color: var(--faint-color);
+						}
+
 						@include media(max-width-768) {
 							width:100%;
 						}
@@ -959,6 +1011,10 @@ layout-boxes {
 						width:95%;
 						color: var(--text-color);
 
+						@media (prefers-color-scheme: light) {
+							color: var(--faint-color);
+						}
+
 						@include media(max-width-768) {
 							width:100%;
 						}
@@ -966,7 +1022,84 @@ layout-boxes {
 
 				}
 
-				pic {
+				picture {
+
+					display: block;
+					width: 110px;
+					overflow: hidden;
+					position: relative;
+					padding-bottom: 20px;
+					border-radius: 0px;
+					background-color:none
+	
+					img {
+						width: 100%;
+						margin: auto;
+						height: 100%;
+						display: block;
+						max-width: 100%;
+						object-fit: cover;
+						transition: transform 0.3s;
+					}
+	
+				}
+			}
+
+			&[hero] {
+
+				border-radius: 0px;
+				margin-bottom: 100px;
+				background-color:transparent;
+
+				@include media(max-width-960) {
+					margin-bottom: 50px;
+				}
+
+				div {
+					padding: 0px;
+					max-width: 100%;
+
+					@include media(max-width-1200) {
+						width:930px;
+					}
+				
+					@include media(max-width-1024) {
+						width:85%;
+					}
+
+					@include media(max-width-768) {
+						width:100%;
+					}
+
+					>h3 {
+						color: var(--same-color);
+					}
+	
+					>h4 {
+						color: var(--same-color);
+					}
+
+					>p:last-child {
+						width:95%;
+						color: var(--same-color);
+
+						@include media(max-width-768) {
+							width:100%;
+						}
+					}
+	
+					>p:first-child {
+						width:95%;
+						color: var(--same-color);
+
+						@include media(max-width-768) {
+							width:100%;
+						}
+					}
+
+				}
+
+				picture {
 
 					display: block;
 					width: 110px;
@@ -1038,7 +1171,7 @@ layout-boxes {
 
 				}
 
-				pic {
+				picture {
 
 					display: block;
 					width: 110px;
@@ -1189,7 +1322,7 @@ layout-boxes {
 
 			&[full][side] {
 
-				pic {
+				picture {
 
 					img {
 						top: 0;
@@ -1209,7 +1342,7 @@ layout-boxes {
 
 			&[full][side] {
 
-				pic {
+				picture {
 
 					float: left;
 					width: 67.7%;
@@ -1278,7 +1411,7 @@ layout-boxes {
 
 			&[full][side] {
 
-				pic {
+				picture {
 
 					img {
 						top: 0;
@@ -1298,7 +1431,7 @@ layout-boxes {
 
 			&[full][side] {
 
-				pic {
+				picture {
 
 					float: left;
 					width: 67.7%;

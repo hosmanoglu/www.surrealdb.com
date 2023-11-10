@@ -31,8 +31,8 @@ section {
 
 	&[pink] {
 		width:100%;
-		background: rgb(255,0,160);
-		background:linear-gradient(120deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 60%);
+		background:linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+		background-color:#000000;
 	}
 
 }
