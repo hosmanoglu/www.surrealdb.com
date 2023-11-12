@@ -102,6 +102,10 @@ sidebar {
 					transition:color 0.5s, border 0.5s;
 					border-bottom:2px solid rgba(255,255,255,0.03);
 
+					@media (prefers-color-scheme: light) {
+						border-bottom:2px solid rgba(0,0,0,0.05);
+					}
+
 					&:not([button]):hover {
 						color:var(--hover-color);
 						border-bottom:2px solid var(--hover-color);
