@@ -145,6 +145,10 @@ layout-hero {
 		padding:350px 60px 150px 60px;
 		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/surreal1.0.jpg");
 
+		@media (prefers-color-scheme: light) {
+			background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/static/img/surreal1.0.jpg");
+		}
+
 		@include media(max-width-960) {
 			top:0px;
 			height:auto;
@@ -156,6 +160,10 @@ layout-hero {
 		height:auto;
 		padding:350px 60px 150px 60px;
 		background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("/static/img/community/techandtunes.jpg");
+
+		@media (prefers-color-scheme: light) {
+			background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/static/img/community/techandtunes.jpg");
+		}
 
 		@include media(max-width-960) {
 			top:0px;
