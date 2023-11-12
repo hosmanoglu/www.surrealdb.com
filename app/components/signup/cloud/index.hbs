@@ -29,9 +29,9 @@
 				<Input @value={{this.firstname}} name="firstname" label="First name" placeholder="Enter your first name" />
 				<Input @value={{this.lastname}} name="lastname" label="Last name" placeholder="Enter your last name" />
 				<Input @value={{this.email}} @type="email" name="email" label="Email address" placeholder="Enter your email address" />
-				<Button::Thicker Form type="submit" {{on "click" this.submit.run}}>
+				<Button::Thinner Form type="submit" {{on "click" this.submit.run}}>
 					Join cloud waitlist
-				</Button::Thicker>
+				</Button::Thinner>
 			</form>
 			{{#if this.submit.error}}
 				<text>Please enter an email address</text>
