@@ -27,12 +27,14 @@ layout-hero {
 
 		@include media(max-width-1301) {
 			background-image:url("/static/img/illustrations/hero1.png"), linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+			background-color:#000000;
 		}
 
 		@include media(max-width-960) {
 			height:auto;
 			padding:50px 0 100px 0;
 			background:linear-gradient(-60deg, rgba(255, 0, 160, 1) 0%, rgba(135, 0, 255, 0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
+			background-color:#000000;
 		}
 	
 		content {
@@ -188,7 +190,7 @@ layout-hero {
 	&[gettingstarted] {
 		height:auto;
 		padding:250px 80px 250px 80px;
-		background-image:url("/static/img/illustrations/gettingstarted.jpg");
+		background-image:url("/static/img/illustrations/dark/gettingstarted.jpg");
 
 		@media (prefers-color-scheme: light) {
 			background-image:url("/static/img/illustrations/light/gettingstarted.jpg");
