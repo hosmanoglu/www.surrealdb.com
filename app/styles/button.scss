@@ -11,9 +11,9 @@ button, a[button] {
 	display:inline-flex;
 	justify-content:center;
 	letter-spacing:0.005em;
-	color: var(--text-color);
-	background: transparent;
-	border: 1px solid #ffffff;
+	background:transparent;
+	color:var(--same-color);
+	border:2px solid var(--same-color);
 
 	&[form] {
 		width:100%;
@@ -24,26 +24,25 @@ button, a[button] {
 		width:100%;
 	}
 
-	&:hover {
-		background: transparent;
-		border: 1px solid #ffffff;
-	}
-
 	span + i {
-		padding-left:30px;
-	}
-
-	i + span {
-		padding-left:10px;
+		padding-left:15px;
 	}
 
 	& i {
 		color:transparent;
-		color: var(--text-color);
+		color:var(--same-color);
+	}
+
+	&:hover {
+		background:transparent;
+		color:var(--black-color);
+		transition:all .4s ease-in-out;
+		border:2px solid var(--same-color);
+		background-color:var(--same-color);
 	}
 
 	&:hover i {
-		color: var(--text-color);
+		color:var(--black-color);
 	}
 
 	p > & {
@@ -58,12 +57,11 @@ button, a[button] {
 
 	&[bordered][thicker] {
 
-		color: #fff;
 		padding:3px;
-		background: transparent;
-	    border: 2px solid #fff;
-		color: var(--text-color);
-		transition: all .4s ease-in-out;
+		background:transparent;
+		color:var(--same-color);
+		transition:all .4s ease-in-out;
+		border:2px solid var(--same-color);
 
 		@include media(max-width-642) {
 			width:100%;
@@ -79,65 +77,33 @@ button, a[button] {
 			justify-content:center;
 		}
 
+		& i {
+			color:transparent;
+			color:var(--same-color);
+		}
+
 		&:hover {
-			background: transparent;
-			color: var(--back-color);
-    		background-color: #fff;
-    		border: 2px solid #fff;
-    		transition: all .4s ease-in-out;
+			background:transparent;
+			color:var(--black-color);
+			transition:all .4s ease-in-out;
+			border:2px solid var(--same-color);
+    		background-color:var(--same-color);
 		}
 
 		&:hover i {
-			color: var(--black-color);
-		}
-
-	}
-
-	&[bordered][thinner] {
-
-		width:50%;
-		padding:3px;
-    	color:#ffffff;
-		background: transparent;
-		color:var(--text-color);
-    	border:2px solid #ffffff;
-		transition: all .4s ease-in-out;
-
-		@include media(max-width-642) {
-			width:100%;
-		}
-
-		div {
-			width:100%;
-			height:100%;
-			display:flex;
-			padding:12px 20px;
-			border-radius:50px;
-			align-items:center;
-			justify-content:center;
-		}
-
-		&:hover {
-			background: transparent;
-			color: var(--back-color);
-    		background-color: #ffffff;
-    		border: 2px solid #ffffff;
-    		transition: all .4s ease-in-out;
+			color:var(--black-color);
 		}
 
 		@media (prefers-color-scheme: light) {
-			width:50%;
 			padding:3px;
-			color:#ffffff;
-			background: transparent;
-			color:var(--text-color);
-			border:2px solid #000000;
-    		transition: all .4s ease-in-out;
+			background:transparent;
+			color:var(--same-color);
+			transition:all .4s ease-in-out;
+			border:2px solid var(--same-color);
 
 			@include media(max-width-642) {
 				width:100%;
 			}
-
 
 			div {
 				width:100%;
@@ -149,12 +115,103 @@ button, a[button] {
 				justify-content:center;
 			}
 
+			& i {
+				color:transparent;
+				color:var(--same-color);
+			}
+
 			&:hover {
-				background: transparent;
-				color: var(--back-color);
-				background-color: #000000;
-				border: 2px solid #000000;
-				transition: all .4s ease-in-out;
+				background:transparent;
+				color:var(--black-color);
+				transition:all .4s ease-in-out;
+				border:2px solid var(--same-color);
+				background-color:var(--same-color);
+			}
+
+			&:hover i {
+				color:var(--black-color);
+			}
+
+		}
+
+	}
+
+	&[bordered][thinner] {
+
+		padding:3px;
+		background:transparent;
+    	color:var(--black-color);
+		transition:all .4s ease-in-out;
+    	border:2px solid var(--black-color);
+
+		@include media(max-width-642) {
+			width:100%;
+		}
+
+
+		div {
+			width:100%;
+			height:100%;
+			display:flex;
+			padding:12px 20px;
+			border-radius:50px;
+			align-items:center;
+			justify-content:center;
+		}
+
+		& i {
+			color:transparent;
+			color:var(--black-color);
+		}
+
+		&:hover {
+			background:transparent;
+			color:var(--same-color);
+			transition:all .4s ease-in-out;
+    		background-color:var(--black-color);
+			border:2px solid var(--black-color);
+		}
+
+		&:hover i {
+			color:var(--same-color);
+		}
+
+		@media (prefers-color-scheme: dark) {
+			padding:3px;
+			background:transparent;
+			color:var(--same-color);
+			transition:all .4s ease-in-out;
+			border:2px solid var(--same-color);
+
+			@include media(max-width-642) {
+				width:100%;
+			}
+
+			div {
+				width:100%;
+				height:100%;
+				display:flex;
+				padding:12px 20px;
+				border-radius:50px;
+				align-items:center;
+				justify-content:center;
+			}
+
+			& i {
+				color:transparent;
+				color:var(--same-color);
+			}
+
+			&:hover {
+				background:transparent;
+				color:var(--black-color);
+				transition:all .4s ease-in-out;
+				border:2px solid var(--same-color);
+				background-color:var(--same-color);
+			}
+
+			&:hover i {
+				color:var(--black-color);
 			}
 
 		}
