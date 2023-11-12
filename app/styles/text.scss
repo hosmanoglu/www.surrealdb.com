@@ -410,6 +410,10 @@ p {
 		color:var(--same-color);
 	}
 
+	&[code] {
+		margin-bottom: 30px;
+	}
+
 	img[inline] {
 		height: 14px;
 	}

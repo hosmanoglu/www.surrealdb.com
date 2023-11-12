@@ -29,7 +29,7 @@
 					<h3>{{item.name}}</h3>
 
 					{{#if item.time}}
-						<p>
+						<p code>
 							{{#if (gt item.time (now))}}
 								Planned {{date-format item.time "DD MMMM, YYYY"}}
 							{{else}}
@@ -44,7 +44,7 @@
 
 					{{#if (is-component item.info)}}
 
-						<Layout::Gap mini />
+						{{!-- <Layout::Gap mini /> --}}
 
 						{{#let (component item.info) as |component|}}
 							<component />
@@ -118,6 +118,7 @@
 						{{#if (ne idx item.text.length)}}
 							<Layout::Gap tiny />
 						{{/if}}
+
 
 					{{/each}}
 

@@ -26,6 +26,12 @@ gap {
 		display:block;
 	}
 
+	&[none] {
+		width:100%;
+		height:0px;
+		display:block;
+	}
+
 	&[small] {
 
 		width:100%;
