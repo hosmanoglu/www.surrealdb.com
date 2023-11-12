@@ -177,6 +177,11 @@ h4 {
 		}
 	}
 
+	&[yaacomm] {
+		width: 100%;
+		color: var(--faint-color);
+	}
+
 	&[white] {
 		color:var(--same-color);
 	}
@@ -227,7 +232,7 @@ h5 {
 
 	&[yaacomm] {
 		width: 100%;
-		color: var(--faint-color);
+		color: var(--text-color);
 	}
 
 	&[white] {

@@ -103,6 +103,7 @@ layout-hero {
 	&[docs], &[blog-article] {
 		padding:0;
 		height:auto;
+		height:96px;
 		background:linear-gradient(-60deg, rgba(255,0,160,1) 0%, rgba(135,0,255,0.8) 50%, rgba(0, 0, 0, 0.4) 110%);
 		background-color:#000000;
 
@@ -190,10 +191,10 @@ layout-hero {
 	&[gettingstarted] {
 		height:auto;
 		padding:250px 80px 250px 80px;
-		background-image:url("/static/img/illustrations/dark/gettingstarted.jpg");
+		background-image:url("/static/img/illustrations/dark/gettingstarted.png");
 
 		@media (prefers-color-scheme: light) {
-			background-image:url("/static/img/illustrations/light/gettingstarted.jpg");
+			background-image:url("/static/img/illustrations/light/gettingstarted.png");
 		}
 
 		@include media(max-width-960) {

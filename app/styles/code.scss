@@ -30,6 +30,12 @@ code, :not(pre) > code[class*="language-"] {
 		cursor:pointer;
 		color:var(--text-color);
 		background-color:var(--hover-color);
+
+		@media (prefers-color-scheme: light) {
+			color:var(--same-color);
+			transition:all .4s ease-in-out;
+			background-color:var(--hover-color);
+		}
 	}
 
 }
@@ -228,6 +234,26 @@ code.language-rust {
 }
 
 code.language-ts {
+	.token.operator { color:#ffffff; }
+	.token.punctuation { color:#ffffff; }
+
+	@media (prefers-color-scheme: light) {
+		.token.operator { color:#000000; }
+		.token.punctuation { color:#000000; }
+	}
+}
+
+code.language-sql {
+	.token.operator { color:#ffffff; }
+	.token.punctuation { color:#ffffff; }
+
+	@media (prefers-color-scheme: light) {
+		.token.operator { color:#000000; }
+		.token.punctuation { color:#000000; }
+	}
+}
+
+code.language-json {
 	.token.operator { color:#ffffff; }
 	.token.punctuation { color:#ffffff; }
 
