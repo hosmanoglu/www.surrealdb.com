@@ -1,4 +1,4 @@
-<a {{on "click" (fn (mut this.show) true)}} button ...attributes>
+<a {{on "click" (fn (mut this.show) true)}} ...attributes>
 	<div>
 		{{#if (has-block)}}
 			{{yield}}
@@ -19,19 +19,19 @@
 		{{#if this.done}}
 			Thank you for registering your interest for SurrealDB Cloud! Check your email inbox for communications from us, and make sure to whitelist <code>surrealdb.com</code> in your email inbox.
 			<br><br>
-			Tobie
-			<br>
-			Founder, SurrealDB
+			The SurrealDB Team
 		{{else}}
 			Thank you for your interest in SurrealDB Cloud. We are building a fully-managed global SurrealDB database platform to make building applications even easier. Enter your email below for more information.
-			<line></line>
+			
+			<Layout::Gap tiny />
+
 			<form {{on "submit" this.submit.run}}>
 				<Input @value={{this.firstname}} name="firstname" label="First name" placeholder="Enter your first name" />
 				<Input @value={{this.lastname}} name="lastname" label="Last name" placeholder="Enter your last name" />
 				<Input @value={{this.email}} @type="email" name="email" label="Email address" placeholder="Enter your email address" />
-				<button type="submit" {{on "click" this.submit.run}}>
+				<Button::Thicker Form type="submit" {{on "click" this.submit.run}}>
 					Join cloud waitlist
-				</button>
+				</Button::Thicker>
 			</form>
 			{{#if this.submit.error}}
 				<text>Please enter an email address</text>
