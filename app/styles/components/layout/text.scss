@@ -43,13 +43,13 @@ layout-text {
 			font-size:6.5vw;
 			margin:0 0 10px 0;
 			font-family:'SF Pro Display';
-			
+
 			@include media(max-width-960) {
 				font-size:52px;
 			}
 
-			@include media(min-width-1449) {
-				font-size: 117px;
+			@include media(min-width-2560) {
+				font-size:4.5vw;
 			}
 		
 		}
@@ -62,8 +62,8 @@ layout-text {
 				font-size:24px;
 			}
 
-			@include media(min-width-1449) {
-				font-size: 45px;
+			@include media(min-width-1270) {
+				font-size:42px;
 			}
 		
 		}

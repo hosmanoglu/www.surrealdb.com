@@ -40,7 +40,7 @@
 	{{~else if (eq item.type 'code')~}}
 		<Ascua::Prism::Block @code={{item.text}} @language={{or item.lang 'txt'}} />
 	{{~else if (eq item.type 'codespan')~}}
-		<code>{{item.text}}</code>
+		<code>{{{item.text}}}</code>
 	{{~else if (eq item.type 'list')~}}
 		{{~#if item.ordered~}}
 			<ol start={{item.start}}><Markup::Tokens @tokens={{item.items}} /></ol>
