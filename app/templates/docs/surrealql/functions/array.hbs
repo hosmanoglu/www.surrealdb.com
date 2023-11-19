@@ -199,6 +199,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#join">
+						<code>array::join()</code>
+					</a>
+				</td>
+				<td>Returns concatenated value of an array with a string in between. </td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#last">
 						<code>array::last()</code>
 					</a>
@@ -755,7 +763,7 @@
 	<Layout::Text text-l text-f>
 		<h3>array::find_index</h3>
 		<p>The <code>array::find_index</code> Returns the index of the first occurrence of <code>value</code> in the array or <code>null</code> if <code>array</code> does not contain <code>value</code></p>
-		<Code @name="docs-surrealql-functions-array-flatten.surql" text="API Definition">
+		<Code @name="docs-surrealql-functions-array-find-index.surql" text="API Definition">
 			array::find_index(array, index) -> array
 		</Code>
 		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
@@ -880,6 +888,29 @@
 			</Code>
 			<Code @name="docs-surrealql-functions-array-intersect-result.txt">
 				[ 3, 4 ]
+			</Code>
+		</codes>
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "join"}}>
+
+	<Layout::Text text-l text-f>
+		<h3>array::join</h3>
+		<p>The <code>array::join</code> takes an array and a string as parameters and returns a concatenated string.</p>
+		<Code @name="docs-surrealql-functions-array-join.surql" text="API Definition">
+			array::join(array, string) -> string
+		</Code>
+		<p>The following example shows this function, and its output, when used in a <Link @link="docs.surrealql.statements.return"><code>RETURN</code></Link> statement:</p>
+		<codes vertical>
+			<Code @name="docs-surrealql-functions-array-join-input.surql">
+				RETURN array::join(["again", "again", "again"], " and ");
+			</Code>
+			<Code @name="docs-surrealql-functions-array-join-result.txt">
+				"again and again and again"
 			</Code>
 		</codes>
 	</Layout::Text>

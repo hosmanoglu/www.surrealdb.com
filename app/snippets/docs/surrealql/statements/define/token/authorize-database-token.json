@@ -1,5 +1,5 @@
 {
-  "NS": "abcum",
-  "DB": "app_vitalsense",
-  // Other data
+  "tk": "token_name",
+  "ns": "abcum",
+  "db": "app_vitalsense"
 }
