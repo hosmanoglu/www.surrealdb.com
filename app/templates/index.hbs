@@ -69,9 +69,9 @@
 	<Layout::Hero gettingstarted>
 		<Layout::Text text-middle>
 			<h5>SurrealDB makes building and scaling realtime apps dramatically quicker and easier. Get started by installing the server, and jump into our getting started guide to learn how to insert and query data in SurrealDB in minutes.</h5>
-			<Button::Thicker @link="docs.introduction.start">
+			<Button::Thinner @link="docs.introduction.start">
 				<span>Get started</span> <i class="fas fa-arrow-right"></i>
-			</Button::Thicker>
+			</Button::Thinner>
 		</Layout::Text>
 	</Layout::Hero>
 
@@ -83,17 +83,17 @@
 
 	<Layout::Gap large />
 
-	<Layout::Boxes cols-3-to-1>
+	<Layout::Box cols-3-to-1>
 		<Link @link="community" mini>
-			<Layout::Boxes::Item community @title="Community" @image="/static/img/img.png" @text="Join our community of maintainers, contributors, users, and surreal enthusiasts and help us make SurrealDB better for developers and organisations all around the world." @buttontext="Join the community" @url="community" />
+			<Layout::Box::Item community @title="Community" @image="/static/img/img.png" @text="Join our community of maintainers, contributors, users, and surreal enthusiasts and help us make SurrealDB better for developers and organisations all around the world." @buttontext="Join the community" @url="community" />
 		</Link>
 		<Link @link="careers" mini>
-			<Layout::Boxes::Item careers1 @title="Careers" @image="/static/img/img.png" @text="We are seeking to hire the best - people who care deeply about the work they do, and care about the people with whom they create and promote the product." @buttontext="Find out more" @url="careers" />
+			<Layout::Box::Item careers1 @title="Careers" @image="/static/img/img.png" @text="We are seeking to hire the best - people who care deeply about the work they do, and care about the people with whom they create and promote the product." @buttontext="Find out more" @url="careers" />
 		</Link>
 		<Link @link="team" mini>
-			<Layout::Boxes::Item team1 @title="Meet the team" @image="/static/img/img.png" @text="SurrealDB comprises an exceptionally talented team of engineers and accomplished leaders, each boasting a rich background in the realms of databases and cloud services." @buttontext="Meet the team" @url="team" />
+			<Layout::Box::Item team1 @title="Meet the team" @image="/static/img/img.png" @text="SurrealDB comprises an exceptionally talented team of engineers and accomplished leaders, each boasting a rich background in the realms of databases and cloud services." @buttontext="Meet the team" @url="team" />
 		</Link>
-	</Layout::Boxes>
+	</Layout::Box>
 
 	<Layout::Gap line />
 
@@ -101,7 +101,7 @@
 
 		<Layout::Hero world>
 			<Layout::Text text-l>
-				<h6>SurrealDB World 2023</h6>
+				<h6 white>SurrealDB World 2023</h6>
 				<br>
 				<Button::Thicker @link={{url "surrealdbworld"}}>
 					<span>Find out more</span> <i class="fas fa-arrow-right"></i>
