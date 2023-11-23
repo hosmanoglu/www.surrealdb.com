@@ -10,9 +10,9 @@ a {
 		color:var(--hover-color);
 	}
 
-	&:focus {
+	&:focus-VISIBLE {
 		outline: 2px solid #ea20e3 ; /* for non-webkit browsers */
-		outline: 5px auto #ea20e3 -webkit-focus-ring-color;
+		outline: auto 1px #ea20e3 -webkit-focus-ring-color;
 	}
 
 	span + i {
