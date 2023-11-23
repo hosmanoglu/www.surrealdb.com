@@ -20,6 +20,10 @@
 	--lighter-color:#6e6e73;	// Same colourfrom light to dark mode
 	--flip-color:#ffffff;		// Flip colour from light to dark mode
 
+	::selection {
+		color: #000000 !important;
+		background-color: #ff009e !important;
+	}
 
 	@media (prefers-color-scheme: light) {
 		--text-color:#000000;		// Colour of primary text
@@ -42,9 +46,15 @@
 		--lighter-color:#6e6e73;	// Same colour from light to dark mode
 		--flip-color:#000000;		// Flip colour from light to dark mode
 
+		::selection {
+			color: #000000 !important;
+			background-color: #ff009e !important;
+		}
+
 	}
 
 	@media (prefers-color-scheme: dark) {
+
 		--text-color:#ffffff;		// Colour of primary text
 		--back-color:#000000;		// Background page colour
 		--light-color:#151517;		// Colour of dark text in boxes
@@ -64,6 +74,12 @@
 		--black-color:#000000;		// Same colour from light to dark mode
 		--lighter-color:#6e6e73;	// Same colour from light to dark mode
 		--flip-color:#ffffff;		// Flip colour from light to dark mode
+
+		::selection {
+			color: #000000 !important;
+			background-color: #ff009e !important;
+		}
+
 	}
 
 }
