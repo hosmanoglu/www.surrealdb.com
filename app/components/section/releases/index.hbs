@@ -21,7 +21,7 @@
 			<section {{waypoint item.hash}}>
 
 				{{#if (ne idx 0)}}
-					<Layout::Gap small />
+					<Layout::Gap mini />
 				{{/if}}
 
 				<Layout::Text text-l>
@@ -128,7 +128,7 @@
 
 					{{#if (is-component item.path)}}
 
-						<Layout::Gap mini />
+						<Layout::Gap tiny />
 
 						{{#let (component item.path) as |component|}}
 							<component />
@@ -138,7 +138,7 @@
 
 				{{/if}}
 
-				<Layout::Gap small />
+				<Layout::Gap tiny />
 
 			</section>
 

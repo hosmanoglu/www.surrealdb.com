@@ -171,7 +171,17 @@ codes {
 // Code highlighting
 // ----------------------------------------
 
+code {
+	.token.operator { color:#ffffff; }
+	.token.punctuation { color:#ffffff; }
+	@media (prefers-color-scheme: light) {
+		.token.operator { color:#000000; }
+		.token.punctuation { color:#000000; }
+	}
+}
+
 code.language-surql {
+
 	.token.operator { background:none; }
 	.token.comment { color:#737e98; }
 	.token.punctuation { color:#ffffff; }
@@ -209,76 +219,36 @@ code.language-surql {
 		.token.record { color:#0084ff; }
 		.token.range { color:#0084ff; }
 	}
+
 }
 
 code.language-shell, code.language-bash {
+
 	.token.prompt { color:#636a75; }
 	.token.command { color:#ff009e; }
-	.token.operator { color:#ffffff; }
 	.token.parameter.variable { color:#ffffff; }
 
 	@media (prefers-color-scheme: light) {
 		.token.prompt { color:#636a75; }
 		.token.command { color:#ff009e; }
-		.token.operator { color:#000000; }
 		.token.parameter.variable { color:#000000; }
 	}
 }
 
-code.language-rust {
-	.token.punctuation { color:#ffffff; }
-
-	@media (prefers-color-scheme: light) {
-		.token.punctuation { color:#000000; }
-	}
-}
-
-code.language-ts {
-	.token.operator { color:#ffffff; }
-	.token.punctuation { color:#ffffff; }
-
-	@media (prefers-color-scheme: light) {
-		.token.operator { color:#000000; }
-		.token.punctuation { color:#000000; }
-	}
-}
-
-code.language-sql {
-	.token.operator { color:#ffffff; }
-	.token.punctuation { color:#ffffff; }
-
-	@media (prefers-color-scheme: light) {
-		.token.operator { color:#000000; }
-		.token.punctuation { color:#000000; }
-	}
-}
-
-code.language-json {
-	.token.operator { color:#ffffff; }
-	.token.punctuation { color:#ffffff; }
-
-	@media (prefers-color-scheme: light) {
-		.token.operator { color:#000000; }
-		.token.punctuation { color:#000000; }
-	}
-}
-
 code.language-javascript {
+
 	.token.string { color:#00ff6e; }
 	.token.function { color:#ff9b67; }
 	.token.constant { color:#ff009e; }
 	.token.keyword { color:#ff009e; }
-	.token.operator { color:#ffffff; }
-	.token.punctuation { color:#ffffff; }
 
 	@media (prefers-color-scheme: light) {
 		.token.string { color:#68DE74; }
 		.token.function { color:#ff9b67; }
 		.token.constant { color:#ff009e; }
 		.token.keyword { color:#ff009e; }
-		.token.operator { color:#000000; }
-		.token.punctuation { color:#000000; }
 	}
+
 }
 
 code.language-txt {
