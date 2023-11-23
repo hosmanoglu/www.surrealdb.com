@@ -173,6 +173,14 @@
 			</tr>
 			<tr>
 				<td>
+					<a href="#info">
+						<Ascua::Prism::Inline @language="csharp" @code="await db.Info<T>()" />
+					</a>
+				</td>
+				<td>Returns the record of an authenticated scope user</td>
+			</tr>
+			<tr>
+				<td>
 					<a href="#set">
 						<Ascua::Prism::Inline @language="csharp" @code="await db.Set(key, value)" />
 					</a>
@@ -198,7 +206,7 @@
 			<tr>
 				<td>
 					<a href="#select">
-						<Ascua::Prism::Inline @language="csharp" @code="await db.Select(resource)" />
+						<Ascua::Prism::Inline @language="csharp" @code="await db.Select<T>(resource)" />
 					</a>
 				</td>
 				<td>Selects all records in a table, or a specific record</td>
@@ -206,7 +214,7 @@
 			<tr>
 				<td>
 					<a href="#create">
-						<Ascua::Prism::Inline @language="csharp" @code="await db.Create(resource, data)" />
+						<Ascua::Prism::Inline @language="csharp" @code="await db.Create<T>(resource, data)" />
 					</a>
 				</td>
 				<td>Creates a record in the database</td>
@@ -214,7 +222,7 @@
 			<tr>
 				<td>
 					<a href="#upsert">
-						<Ascua::Prism::Inline @language="csharp" @code="await db.Upsert(data)" />
+						<Ascua::Prism::Inline @language="csharp" @code="await db.Upsert<T>(data)" />
 					</a>
 				</td>
 				<td>Creates or updates a specific record</td>
@@ -222,7 +230,7 @@
 			<tr>
 				<td>
 					<a href="#merge">
-						<Ascua::Prism::Inline @language="csharp" @code="await db.Merge(resource, data)" />
+						<Ascua::Prism::Inline @language="csharp" @code="await db.Merge<T>(resource, data)" />
 					</a>
 				</td>
 				<td>Modifies all records in a table, or a specific record</td>
@@ -234,6 +242,38 @@
 					</a>
 				</td>
 				<td>Deletes all records, or a specific record</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#listen-live">
+						<Ascua::Prism::Inline @language="csharp" @code="db.ListenLive<T>(queryUuid)" />
+					</a>
+				</td>
+				<td>Listen for live query responses</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#live-query">
+						<Ascua::Prism::Inline @language="csharp" @code="await db.LiveQuery<T>(sql, params)" />
+					</a>
+				</td>
+				<td>Initiate a live query from a SurrealQL statement</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#live-table">
+						<Ascua::Prism::Inline @language="csharp" @code="await db.LiveTable<T>(table, diff)" />
+					</a>
+				</td>
+				<td>Initiate a live query from a table</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#kill">
+						<Ascua::Prism::Inline @language="csharp" @code="await db.Kill(queryUuid)" />
+					</a>
+				</td>
+				<td>Kill a running live query</td>
 			</tr>
 			<tr>
 				<td>
@@ -835,6 +875,39 @@
 
 <Layout::Gap small />
 
+<Layout::Group {{waypoint "info"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Info<T>()" /></h3>
+		<p>This method returns the record of an authenticated scope user.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>cancellationToken</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							The cancellationToken enables graceful cancellation of asynchronous operations.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/dotnet/info.cs" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
 <Layout::Group {{waypoint "set"}}>
 
 	<Layout::Text text-l text-f>
@@ -982,7 +1055,7 @@
 <Layout::Group {{waypoint "select"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Select(resource)" /></h3>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Select<T>(resource)" /></h3>
 		<p>Selects all records in a table, or a specific record, from the database.</p>
 		<Layout::Table>
 			<table>
@@ -1024,7 +1097,7 @@
 <Layout::Group {{waypoint "create"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Create(resource, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Create<T>(resource, data)" /></h3>
 		<p>Creates a record in the database.</p>
 		<Layout::Table>
 			<table>
@@ -1075,7 +1148,7 @@
 <Layout::Group {{waypoint "upsert"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Upsert(data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Upsert<T>(data)" /></h3>
 		<p>Creates or updates a specific record.</p>
 		<blockquote yellow text="Note">This function creates a new document / record or replaces the current one with the specified data.</blockquote>
 		<Layout::Table>
@@ -1118,7 +1191,7 @@
 <Layout::Group {{waypoint "patch"}}>
 
 	<Layout::Text text-l text-f>
-		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Merge(resource, data)" /></h3>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Merge<T>(resource, data)" /></h3>
 		<p>Modifies all records in a table, or a specific record.</p>
 		<Layout::Table>
 			<table>
@@ -1202,6 +1275,183 @@
 			</table>
 		</Layout::Table>
 		<Code @name="docs/integration/libraries/dotnet/delete.cs" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "listen-live"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="db.ListenLive<T>(queryUuid)" /></h3>
+		<p>Listen responses from an existing live query.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>queryUuid</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The UUID of the live query to consume.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/dotnet/listen-live.cs" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "live-query"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.LiveQuery<T>(sql, params)" /></h3>
+		<p>Initiate a live query from a SurrealQL statement.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>sql</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							Specifies the SurrealQL statements.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>params</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							Assigns variables which can be used in the query.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>cancellationToken</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							The cancellationToken enables graceful cancellation of asynchronous operations.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/dotnet/live-query.cs" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "live-table"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.LiveTable<T>(table, diff)" /></h3>
+		<p>Initiate a live query from a table.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>table</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The table name to listen for changes for.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>diff</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							If set to true, live notifications will include an array of JSON Patch objects, rather than the entire record for each notification.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>cancellationToken</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							The cancellationToken enables graceful cancellation of asynchronous operations.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/dotnet/live-table.cs" />
+	</Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint "kill"}}>
+
+	<Layout::Text text-l text-f>
+		<h3><Ascua::Prism::Inline @language="csharp" @code="await db.Kill(queryUuid)" /></h3>
+		<p>Kills a running live query by it's UUID.</p>
+		<Layout::Table>
+			<table>
+				<thead>
+					<tr>
+						<th w-40>Arguments</th>
+						<th w-60>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<code>queryUuid</code>
+							<l yellow r>Required</l>
+						</td>
+						<td>
+							The UUID of the live query you wish to kill.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<code>cancellationToken</code>
+							<l faint r>Optional</l>
+						</td>
+						<td>
+							The cancellationToken enables graceful cancellation of asynchronous operations.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</Layout::Table>
+		<Code @name="docs/integration/libraries/dotnet/kill.cs" />
 	</Layout::Text>
 
 </Layout::Group>
